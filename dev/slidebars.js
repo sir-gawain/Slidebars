@@ -15,7 +15,7 @@ var slidebars = function () {
 	 */
 
 	// Cache all canvas elements
-	var canvas = $( '[canvas]' ),
+	var canvas = $( '[data-canvas]' ),
 
 	// Object of Slidebars
 	offCanvas = {},
@@ -103,9 +103,9 @@ var slidebars = function () {
 
 		// Loop through and register Slidebars
 		if ( ! registered ) {
-			$( '[off-canvas]' ).each( function () {
+			$( '[data-off-canvas]' ).each( function () {
 				// Get Slidebar parameters
-				var parameters = $( this ).attr( 'off-canvas' ).split( ' ', 3 );
+				var parameters = $( this ).attr( 'data-off-canvas' ).split( ' ', 3 );
 
 				// Make sure a valid id, side and style are specified
 				if ( ! parameters || ! parameters[ 0 ] || sides.indexOf( parameters[ 1 ] ) === -1 || styles.indexOf( parameters[ 2 ] ) === -1 ) {
