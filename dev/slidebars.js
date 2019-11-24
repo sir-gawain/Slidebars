@@ -468,3 +468,13 @@ var slidebars = function () {
 
 	$( window ).on( 'resize', this.css.bind( this ) );
 };
+
+if (typeof define !== 'undefined' && define.amd) {
+	define([], function () {
+		return slidebars;
+	});
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = slidebars;
+}
