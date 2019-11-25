@@ -8,6 +8,16 @@ It is not compatible with previous versions, so check out the [Slidebars website
 
 Previous versions of Slidebars are no longer supported.
 
+**NOTE:** This is a fork of the main Slidebars repo with basic support added for common-js and amd so that you can use it with webpack without a plugin. To depend on this fork, update your `package.json` to include this:
+
+```JSON
+{
+  "dependencies": {
+    "slidebars": "https://github.com/sir-gawain/Slidebars.git"
+  }
+}
+```
+
 ## How to Contribute to Slidebars Using GitHub
 
 ### Raising Issues
