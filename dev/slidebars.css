@@ -15,8 +15,6 @@
 html, body, [data-canvas="container"], [data-off-canvas] {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -110,31 +108,24 @@ html, body {
  */
 
 [data-canvas], [data-off-canvas] {
-    -webkit-transform: translate(0px, 0px);
-    -ms-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
-    -webkit-transition: -webkit-transform 300ms;
     transition: transform 300ms;
     -webkit-backface-visibility: hidden; /* Prevents flickering, may be removed if experiencing problems with fixed background images in Chrome. */
 }
 
 [data-off-canvas~="shift"][data-off-canvas~="top"] {
-    -webkit-transform: translate(0px, 50%);
     transform: translate(0px, 50%);
 }
 
 [data-off-canvas~="shift"][data-off-canvas~="right"] {
-    -webkit-transform: translate(-50%, 0px);
     transform: translate(-50%, 0px);
 }
 
 [data-off-canvas~="shift"][data-off-canvas~="bottom"] {
-    -webkit-transform: translate(0px, -50%);
     transform: translate(0px, -50%);
 }
 
 [data-off-canvas~="shift"][data-off-canvas~="left"] {
-    -webkit-transform: translate(50%, 0px);
     transform: translate(50%, 0px);
 }
 
@@ -144,8 +135,6 @@ html, body {
 
 @media print {
     [data-canvas] {
-        -webkit-transform: translate(0px, 0px) !important;
-        -ms-transform: translate(0px, 0px) !important;
         transform: translate(0px, 0px) !important;
     }
 

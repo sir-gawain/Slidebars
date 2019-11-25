@@ -7,12 +7,20 @@
   "main": "dist/slidebars.min.js",
   "style": "dist/slidebars.min.css",
   "scripts": {
-    "build-css": "node-sass dev/slidebars.css > dist/slidebars.css && node-sass dev/slidebars.css --output-style=compressed > dist/slidebars.min.css",
+    "build-css-std": "node-sass dev/slidebars.css | postcss -u autoprefixer --no-map > dist/slidebars.css",
+    "build-css-min": "node-sass dev/slidebars.css --output-style=compressed | postcss -u autoprefixer --no-map > dist/slidebars.min.css",
+    "build-css": "npm run build-css-std && npm run build-css-min",
     "build-js": "uglifyjs dev/slidebars.js --comments \"/^!/\" --beautify -o dist/slidebars.js && uglifyjs dev/slidebars.js --comments \"/^!/\" -m -c -o dist/slidebars.min.js",
     "build": "npm run build-css && npm run build-js"
   },
   "devDependencies": {
+    "autoprefixer": "^9.7.2",
+    "browserslist": "^4.7.3",
     "node-sass": "^4.13.0",
+    "postcss-cli": "^6.1.3",
     "uglify-js": "^3.6.9"
-  }
+  },
+  "browserslist": [
+    "last 4 version"
+  ]
 }
