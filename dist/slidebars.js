@@ -9,7 +9,10 @@
  */
 var slidebars = function() {
     var canvas = $("[data-canvas]"), offCanvas = {}, init = false, registered = false, sides = [ "top", "right", "bottom", "left" ], styles = [ "reveal", "push", "overlay", "shift" ], getAnimationProperties = function(id) {
-        var elements = $(), amount = "0px, 0px", duration = parseFloat(offCanvas[id].element.css("transitionDuration"), 10) * 1e3;
+        var elements = $(), amount = "0px, 0px", duration = parseFloat(offCanvas[id].element.css("transitionDuration"), 10) * 1e3, dataDuration = parseFloat(offCanvas[id].element.data("transitionDuration"), 10) * 1e3;
+        if (!isNaN(dataDuration)) {
+            duration = dataDuration;
+        }
         if (offCanvas[id].style === "reveal" || offCanvas[id].style === "push" || offCanvas[id].style === "shift") {
             elements = elements.add(canvas);
         }

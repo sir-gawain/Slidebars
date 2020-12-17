@@ -34,7 +34,12 @@ var slidebars = function () {
 		// Variables
 		var elements = $(),
 		amount = '0px, 0px',
-		duration = parseFloat( offCanvas[ id ].element.css( 'transitionDuration' ), 10 ) * 1000;
+		duration = parseFloat( offCanvas[ id ].element.css( 'transitionDuration' ), 10 ) * 1000,
+		dataDuration = parseFloat( offCanvas[ id ].element.data( 'transitionDuration' ), 10 ) * 1000;
+
+		if(!isNaN(dataDuration)) {
+			duration = dataDuration;
+		}
 
 		// Elements to animate
 		if ( offCanvas[ id ].style === 'reveal' || offCanvas[ id ].style === 'push' || offCanvas[ id ].style === 'shift' ) {
