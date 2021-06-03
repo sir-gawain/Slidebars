@@ -128,7 +128,8 @@ var slidebars = function() {
         }
         var open = function() {
             offCanvas[id].active = true;
-            offCanvas[id].element.css("display", "block");
+            var display = offCanvas[id].element.data("openDisplayMode") || "block";
+            offCanvas[id].element.css("display", display);
             $(events).trigger("opening", [ offCanvas[id].id ]);
             var animationProperties = getAnimationProperties(id);
             animationProperties.elements.css({
